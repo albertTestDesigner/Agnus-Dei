@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/LIQ icone.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Login | Plataforma de Estudos</title>
+</head>
+<body>
+
+    <main class="login-wrapper">
+        <div class="login-card">
+            
+            <header class="card-header">
+                <h2>Acesse sua conta</h2>
+                <p>Bem-vindo de volta! Insira suas credenciais para continuar.</p>
+            </header>
+
+            <form id="loginForm" novalidate>
+                
+                <!-- Campo E-mail -->
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        placeholder="seu.email@dominio.com" 
+                        required 
+                        autocomplete="email"
+                    >
+                </div>
+
+                <!-- Campo Senha -->
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <div class="password-wrapper">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            placeholder="Sua senha secreta" 
+                            required 
+                            autocomplete="current-password"
+                        >
+                        <button type="button" id="togglePassword" class="btn-toggle-password" aria-label="Mostrar ou ocultar senha">
+                            <!-- Ícone Olho (Fechado/Aberto alternado via CSS/JS) -->
+                            <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Controles Adicionais: Lembrar / Esqueceu a Senha -->
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="rememberMe">
+                        <span class="custom-checkbox"></span>
+                        <span class="label-text">Lembrar deste dispositivo</span>
+                    </label>
+                    <a href="#" class="forgot-link">Esqueceu a senha?</a>
+                </div>
+
+                <!-- Botão de Submissão -->
+                <button type="submit" class="btn-primary">Estudar!</button>
+
+                <!-- Mensagem de Feedback -->
+                <p id="message" role="alert" aria-live="polite"></p>
+
+            </form>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

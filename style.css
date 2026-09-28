@@ -1,0 +1,195 @@
+:root {
+    --bg-pagina: #f7f4ff;
+    --bg-card-header: #ffffff;
+    --texto-principal: #1a1a1a;
+    --texto-secundario: #555555;
+    --borda-dropdown: #eae1ff;
+    --sombra-card: rgba(255, 236, 255, 0.8);
+    --banner-hero-bg: linear-gradient(135deg, #abb3ff, #8532fb);
+    --banner-hero-texto: #1a3bf5;
+    --cor-sucesso: #702cb4;
+    --cor-erro: #e63946;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "IBM Plex Mono", monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-pagina);
+    background-image: radial-gradient(#d2d7ff 1px, transparent 1px);
+    background-size: 20px 20px;
+    padding: 20px;
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-card {
+    width: 100%;
+    background: var(--bg-card-header);
+    padding: 35px 30px;
+    border-radius: 16px;
+    border: 1px solid var(--borda-dropdown);
+    box-shadow: 0 10px 30px var(--sombra-card), 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.card-header h2 {
+    color: var(--texto-principal);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.card-header p {
+    color: var(--texto-secundario);
+    font-size: 0.85rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--texto-principal);
+    margin-bottom: 6px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    border: 1.5px solid var(--borda-dropdown);
+    border-radius: 8px;
+    background-color: #fafafd;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--banner-hero-texto);
+    box-shadow: 0 0 0 3px rgba(26, 59, 245, 0.15);
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.btn-toggle-password {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--texto-secundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    transition: color 0.2s ease;
+}
+
+.btn-toggle-password:hover {
+    color: var(--banner-hero-texto);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+    font-size: 0.8rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    color: var(--texto-secundario);
+}
+
+.checkbox-container input {
+    margin-right: 8px;
+    accent-color: var(--banner-hero-texto);
+    cursor: pointer;
+}
+
+.forgot-link {
+    color: var(--banner-hero-texto);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: var(--banner-hero-bg);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(133, 50, 251, 0.25);
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+#message {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    min-height: 20px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 480px) {
+    .login-card {
+        padding: 25px 20px;
+    }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
